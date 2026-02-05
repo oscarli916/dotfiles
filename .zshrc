@@ -23,7 +23,7 @@ bindkey '^ ' autosuggest-accept
 bindkey -s '^f' '/home/oscar/personal/tmux-sessionizer^M'
 
 # alias
-alias ls='lsd'
+alias ls='ls'
 alias l='ls -l'
 alias la='ls -a'
 alias lla='ls -la'
