@@ -775,7 +775,7 @@ require("lazy").setup({
 					return nil
 				else
 					return {
-						timeout_ms = 500,
+						timeout_ms = 2500,
 						lsp_format = "fallback",
 					}
 				end
@@ -787,6 +787,10 @@ require("lazy").setup({
 				--
 				-- You can use 'stop_after_first' to run the first available formatter from the list
 				-- javascript = { "prettierd", "prettier", stop_after_first = true },
+				javascript = { "prettier" },
+				typescript = { "prettier" },
+				javascriptreact = { "prettier" },
+				typescriptreact = { "prettier" },
 			},
 		},
 	},
