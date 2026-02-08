@@ -14,13 +14,13 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 # fastfetch. Will be disabled if above colorscript was chosen to install
-fastfetch
+#fastfetch
 
 # zsh-autosuggestions configuration
 ZSH_AUTOSUGGEST_STRATEGY=(completion history)
 
 bindkey '^ ' autosuggest-accept
-bindkey -s '^f' '/home/oscar/personal/tmux-sessionizer^M'
+bindkey -s '^f' '$HOME/personal/tmux-sessionizer^M'
 
 # alias
 alias ls='ls'
@@ -40,4 +40,4 @@ eval "$(starship init zsh)"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # opencode
-export PATH=/home/oscar/.opencode/bin:$PATH
+export PATH=/$HOME/.opencode/bin:$PATH
