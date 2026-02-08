@@ -1,6 +1,7 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+export PATH="$HOME/.local/bin:$PATH"
 export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="robbyrussell"
@@ -20,7 +21,7 @@ source $ZSH/oh-my-zsh.sh
 ZSH_AUTOSUGGEST_STRATEGY=(completion history)
 
 bindkey '^ ' autosuggest-accept
-bindkey -s '^f' '$HOME/personal/tmux-sessionizer^M'
+bindkey -s '^f' '$HOME/personal/dotfiles/tmux-sessionizer^M'
 
 # alias
 alias ls='ls'

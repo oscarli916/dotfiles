@@ -7,4 +7,5 @@
 ^/COPYING
 
 \.stor-local-ignore
+^/tmux-sessionizer$
 ^/install$
