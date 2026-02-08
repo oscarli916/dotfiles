@@ -2,6 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 export PATH="$HOME/.local/bin:$PATH"
+export PATH=/$HOME/.opencode/bin:$PATH
 export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="robbyrussell"
@@ -39,6 +40,3 @@ eval "$(starship init zsh)"
 
 # start fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# opencode
-export PATH=/$HOME/.opencode/bin:$PATH

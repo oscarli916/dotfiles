@@ -12,6 +12,7 @@ scripts=(
     "install-starship.sh"
     "install-fzf.sh"
     "install-tmux.sh"
+    "install-nvim.sh"
 )
 
 for script in "${scripts[@]}"; do
