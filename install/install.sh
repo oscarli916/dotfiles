@@ -11,6 +11,7 @@ scripts=(
     "install-oh-my-zsh.sh"
     "install-starship.sh"
     "install-fzf.sh"
+    "install-lsd.sh"
     "install-tmux.sh"
     "install-nvim.sh"
 )
