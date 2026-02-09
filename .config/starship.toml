@@ -1,0 +1,39 @@
+format = """
+$shlvl\
+$directory\
+$git_branch\
+$git_commit\
+$git_state\
+$git_metrics\
+$git_status\
+$hg_branch\
+$hg_state\
+$pijul_channel\
+$docker_context\
+$buf\
+$meson\
+$spack\
+$nats\
+$direnv\
+$env_var\
+$mise\
+$crystal\
+$custom\
+$sudo\
+$line_break\
+$jobs\
+$container\
+$shell\
+$character"""
+
+[git_branch]
+#style = "bold green"
+truncation_length = 40
+truncation_symbol = '...'
+format = "[$branch]($style)"
+
+[directory]
+truncation_length = 255
+# truncation_symbol = '…/'
+truncate_to_repo = false
+use_logical_path = false
