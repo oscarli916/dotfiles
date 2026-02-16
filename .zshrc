@@ -34,6 +34,8 @@ alias c='clear'
 alias v='nvim'
 alias nv='nvim'
 alias n='nvim'
+alias podman='podman.exe'
+alias docker='podman'
 
 # start Starship
 eval "$(starship init zsh)"
