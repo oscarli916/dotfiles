@@ -22,6 +22,8 @@ config.enable_tab_bar = false
 
 config.default_prog = { "wsl.exe", "--cd", "~" }
 
+config.window_close_confirmation = "NeverPrompt"
+
 wezterm.on("gui-startup", function(cmd)
 	local active_screen = wezterm.gui.screens().active
 	local _, _, window = wezterm.mux.spawn_window(cmd or {})
