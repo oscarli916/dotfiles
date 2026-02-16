@@ -14,6 +14,7 @@ scripts=(
     "install-lsd.sh"
     "install-tmux.sh"
     "install-nvim.sh"
+    "install-ripgrep.sh"
     "install-opencode.sh"
 )
 
