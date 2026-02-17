@@ -34,8 +34,14 @@ alias c='clear'
 alias v='nvim'
 alias nv='nvim'
 alias n='nvim'
-alias podman='podman.exe'
+if ! command -v podman >/dev/null 2>&1; then
+    alias podman='podman.exe'
+fi
 alias docker='podman'
+if ! command -v kubectl >/dev/null 2>&1; then
+    alias kubectl='kubectl.exe'
+fi
+alias k='kubectl'
 
 # start Starship
 eval "$(starship init zsh)"
