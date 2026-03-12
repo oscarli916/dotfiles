@@ -56,10 +56,36 @@ Personal dotfiles managed with [GNU Stow](https://www.gnu.org/software/stow/).
 | `install-lsd.sh` | LSD (modern `ls` replacement) | Package manager |
 | `install-tmux.sh` | tmux 3.5a + TPM | Source build (`~/.local`) |
 | `install-nvim.sh` | Neovim v0.11.4 | Source build (`~/.local`) |
+| `install-mise.sh` | mise | Official install script (`~/.local/bin/mise`) |
 | `install-ripgrep.sh` | ripgrep 15.1.0 | Binary download (`~/.local/bin`) |
 | `install-opencode.sh` | opencode | Official install script (`~/.opencode/bin`) |
 
 All scripts are idempotent and support Debian/Ubuntu (apt), Fedora (dnf), and Arch (pacman).
+
+### Mise Install Parameters (automation)
+
+`install-mise.sh` uses `https://mise.run` and supports these environment variables:
+
+- `MISE_VERSION` -- install a specific version (for example `v2026.3.8`)
+- `MISE_INSTALL_PATH` -- full install path for binary (default: `~/.local/bin/mise`)
+- `MISE_INSTALL_OS` -- force OS (`linux`, `macos`)
+- `MISE_INSTALL_ARCH` -- force arch (`x64`, `x64-musl`, `arm64`, `arm64-musl`, `armv7`, `armv7-musl`)
+- `MISE_INSTALL_EXT` -- archive format (`tar.gz` or `tar.zst`)
+- `MISE_INSTALL_MUSL` -- force musl builds (`1` or `true`)
+- `MISE_INSTALL_FROM_GITHUB` -- download from GitHub releases (`1` or `true`)
+- `MISE_TARBALL_URL` -- custom tarball URL override
+- `MISE_INSTALL_HELP` -- show post-install shell instructions (`0` to disable)
+- `MISE_DEBUG` -- enable debug output (`1` or `true`)
+- `MISE_QUIET` -- reduce output (`1` or `true`)
+
+Example:
+
+```bash
+curl -fsSL https://mise.run | env \
+  MISE_INSTALL_PATH="$HOME/.local/bin/mise" \
+  MISE_INSTALL_HELP=0 \
+  sh
+```
 
 ### Post-Install Steps
 

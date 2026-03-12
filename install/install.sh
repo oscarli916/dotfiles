@@ -14,6 +14,7 @@ scripts=(
     "install-lsd.sh"
     "install-tmux.sh"
     "install-nvim.sh"
+    "install-mise.sh"
     "install-ripgrep.sh"
     "install-opencode.sh"
 )
@@ -38,4 +39,3 @@ echo "1. fzf     - Press Ctrl+R to search command history with fzf"
 echo "2. lsd     - Run 'ls' to see colored output with icons"
 echo "3. tmux    - Press Ctrl+A then I to install plugins via tpm"
 echo "4. nvim    - Open nvim to automatically install dependencies"
-
