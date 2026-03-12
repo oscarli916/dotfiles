@@ -19,6 +19,9 @@ Personal dotfiles managed with [GNU Stow](https://www.gnu.org/software/stow/).
 
 - [GNU Stow](https://www.gnu.org/software/stow/)
 - [JetBrainsMono Nerd Font](https://www.nerdfonts.com/) (used across all terminal configs)
+- `curl` and `git` (required by several install scripts)
+- `sudo` access for system package installs
+- Build tools (`make`, `gcc/clang`, `tar`, etc.) for source-build scripts (`tmux`, `neovim`)
 
 ## Installation
 
@@ -114,6 +117,8 @@ curl -fsSL https://mise.run | env \
 
 **fzf Integration:** Sourced from `~/.fzf.zsh`, providing `Ctrl+T`, `Ctrl+R`, and `Alt+C` bindings.
 
+**Extra keybindings:** `Ctrl+Space` accepts current autosuggestion, `Ctrl+F` launches `tmux-sessionizer`.
+
 ### Aliases
 
 | Alias | Command | Description |
@@ -126,6 +131,9 @@ curl -fsSL https://mise.run | env \
 | `c` | `clear` | Clear terminal |
 | `v` / `nv` / `n` | `nvim` | Open Neovim |
 | `docker` | `podman` | Use podman as docker |
+| `k` | `kubectl` | Short alias for kubectl |
+
+On environments where native `podman` or `kubectl` are unavailable, fallback aliases to `podman.exe` and `kubectl.exe` are configured.
 
 ### Terminal Emulators
 
