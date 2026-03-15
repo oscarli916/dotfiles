@@ -48,3 +48,6 @@ eval "$(starship init zsh)"
 
 # start fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# start mise
+eval "$(~/.local/bin/mise activate zsh)"
