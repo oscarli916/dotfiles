@@ -18,6 +18,7 @@ scripts=(
     "install-ripgrep.sh"
     "install-tailscale.sh"
     "install-opencode.sh"
+    "install-direnv.sh"
 )
 
 for script in "${scripts[@]}"; do

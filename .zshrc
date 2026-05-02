@@ -51,3 +51,6 @@ eval "$(starship init zsh)"
 
 # start mise
 eval "$(~/.local/bin/mise activate zsh)"
+
+# start direnv
+eval "$(direnv hook zsh)"
