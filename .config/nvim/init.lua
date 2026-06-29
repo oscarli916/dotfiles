@@ -207,6 +207,8 @@ vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper win
 
 vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Go Down and move cursor to center" })
 vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Go Up and move cursor to center" })
+vim.keymap.set("n", "<C-s>", vim.lsp.buf.signature_help, { desc = "LSP Signature Help" })
+vim.keymap.set("n", "<C-t>", vim.lsp.buf.hover, { desc = "Show variable type and documentation" })
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
