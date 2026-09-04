@@ -794,6 +794,7 @@ require("lazy").setup({
 				javascriptreact = { "prettier" },
 				typescriptreact = { "prettier" },
 				go = { "gofumpt" },
+				terraform = { "terraform_fmt" },
 			},
 		},
 	},
