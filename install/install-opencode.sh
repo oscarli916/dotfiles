@@ -3,10 +3,15 @@ set -euo pipefail
 
 # ─── Install opencode ───
 
-# 1. Check if opencode is already installed
+# 1. Skip if opencode v2 is already installed
 if command -v opencode &>/dev/null; then
-    echo "==> opencode already installed: $(opencode --version 2>/dev/null || echo 'version unknown'), skipping"
-    exit 0
+    installed_version=$(opencode --version 2>/dev/null || true)
+    if [[ "$installed_version" == 2.* ]]; then
+        echo "==> opencode v2 already installed: $installed_version, skipping"
+        exit 0
+    fi
+
+    echo "==> Found opencode ${installed_version:-version unknown}; upgrading to v2..."
 fi
 
 # 2. Check if curl is available
@@ -15,18 +20,24 @@ if ! command -v curl &>/dev/null; then
     exit 1
 fi
 
-# 3. Install opencode via official install script
+# 3. Install opencode v2 via official install script
 #    --no-modify-path  : don't modify shell config files (.zshrc, .bashrc, etc.)
-echo "==> Installing opencode..."
-curl -fsSL https://opencode.ai/install | bash -s -- --no-modify-path
+echo "==> Installing opencode v2..."
+curl -fsSL https://opencode.ai/v2/install | bash -s -- --no-modify-path
 
 # 4. Verify
 if command -v opencode &>/dev/null; then
-    echo "==> opencode installed successfully: $(opencode --version 2>/dev/null || echo 'version unknown')"
+    installed_version=$(opencode --version 2>/dev/null || true)
+    if [[ "$installed_version" != 2.* ]]; then
+        echo "Error: Expected opencode v2, but found ${installed_version:-version unknown}."
+        exit 1
+    fi
+
+    echo "==> opencode installed successfully: $installed_version"
 else
-    echo "==> opencode installed to ~/.opencode/bin"
-    echo "    Note: Not adding to PATH (--no-modify-path enabled)"
-    echo "    Add manually if needed: export PATH=\"\$HOME/.opencode/bin:\$PATH\""
+    echo "Error: opencode was installed to ~/.opencode/bin but is not available on PATH."
+    echo "Add it with: export PATH=\"\$HOME/.opencode/bin:\$PATH\""
+    exit 1
 fi
 
 echo "==> Done!"
