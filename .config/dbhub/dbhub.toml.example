@@ -1,18 +1,80 @@
+# Copy to dbhub.toml and configure each source before using DBHub.
+# Docs: https://dbhub.ai/config/toml
+# Set these DSN variables in DBHub's process environment.
+# Example DSN: postgres://user:password@db.example.com/auth?sslmode=require
+
 [[sources]]
-id = "example_db"
-description = "Example PostgreSQL database"
-dsn = "postgres://user:${DB_PASSWORD}@db.example.com:5432/example_db"
-connection_timeout = 60
-query_timeout = 30
+id = "lync_local_auth"
+description = "Lync Local Auth Postgres Database"
+dsn = "${LOCAL_AUTH_DATABASE_URL}"
+connection_timeout = 60  # 60 seconds
+query_timeout = 30  # 30 seconds
+sslmode = "require"
+lazy = true
+
+[[sources]]
+id = "lync_local_transfer"
+description = "Lync Local Transfer Postgres Database"
+dsn = "${LOCAL_TRANSFER_DATABASE_URL}"
+connection_timeout = 60  # 60 seconds
+query_timeout = 30  # 30 seconds
+sslmode = "require"
+lazy = true
+
+[[sources]]
+id = "lync_prod_auth"
+description = "Lync Production Auth Postgres Database"
+dsn = "${PROD_AUTH_DATABASE_URL}"
+connection_timeout = 60  # 60 seconds
+query_timeout = 30  # 30 seconds
+sslmode = "require"
+lazy = true
+
+[[sources]]
+id = "lync_prod_transfer"
+description = "Lync Production Transfer Postgres Database"
+dsn = "${PROD_TRANSFER_DATABASE_URL}"
+connection_timeout = 60  # 60 seconds
+query_timeout = 30  # 30 seconds
 sslmode = "require"
 lazy = true
 
 [[tools]]
 name = "execute_sql"
-source = "example_db"
+source = "lync_local_auth"
 readonly = true
 max_rows = 1000
 
 [[tools]]
 name = "search_objects"
-source = "example_db"
+source = "lync_local_auth"
+
+[[tools]]
+name = "execute_sql"
+source = "lync_local_transfer"
+readonly = true
+max_rows = 1000
+
+[[tools]]
+name = "search_objects"
+source = "lync_local_transfer"
+
+[[tools]]
+name = "execute_sql"
+source = "lync_prod_auth"
+readonly = true
+max_rows = 1000
+
+[[tools]]
+name = "search_objects"
+source = "lync_prod_auth"
+
+[[tools]]
+name = "execute_sql"
+source = "lync_prod_transfer"
+readonly = true
+max_rows = 1000
+
+[[tools]]
+name = "search_objects"
+source = "lync_prod_transfer"

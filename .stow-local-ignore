@@ -9,3 +9,4 @@
 \.stor-local-ignore
 ^/tmux-sessionizer$
 ^/install$
+^/\.config/dbhub/dbhub\.toml\.example$
