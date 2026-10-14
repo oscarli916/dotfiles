@@ -1,0 +1,18 @@
+[[sources]]
+id = "example_db"
+description = "Example PostgreSQL database"
+dsn = "postgres://user:${DB_PASSWORD}@db.example.com:5432/example_db"
+connection_timeout = 60
+query_timeout = 30
+sslmode = "require"
+lazy = true
+
+[[tools]]
+name = "execute_sql"
+source = "example_db"
+readonly = true
+max_rows = 1000
+
+[[tools]]
+name = "search_objects"
+source = "example_db"
