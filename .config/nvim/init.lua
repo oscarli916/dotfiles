@@ -801,6 +801,8 @@ require("lazy").setup({
 				typescript = { "prettier" },
 				javascriptreact = { "prettier" },
 				typescriptreact = { "prettier" },
+				json = { "prettier" },
+				jsonc = { "prettier" },
 				go = { "gofumpt" },
 				terraform = { "terraform_fmt" },
 			},
