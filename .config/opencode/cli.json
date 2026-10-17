@@ -4,7 +4,12 @@
     "session.new": "ctrl+t,<leader>n",
     "variant.cycle": "none",
     "session.tab.close": "ctrl+w,<leader>w",
-    "input.delete.word.backward": "ctrl+backspace,alt+backspace"
+    "input.delete.word.backward": "ctrl+backspace,alt+backspace",
+    "session.half.page.up": "ctrl+u",
+    "session.half.page.down": "ctrl+d",
+    "input.delete.to.line.start": "none",
+    "input.delete": "delete,shift+delete",
+    "app.exit": "ctrl+c,<leader>q"
   },
   "theme": {
     "name": "catppuccin"
