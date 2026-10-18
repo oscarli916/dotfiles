@@ -25,10 +25,5 @@
     "scrollbar": false,
     "thinking": "show"
   },
-  "animations": true,
-  "attention": {
-    "notifications": true,
-    "sound": true,
-    "volume": 0.4
-  }
+  "animations": true
 }
