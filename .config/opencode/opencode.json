@@ -21,6 +21,22 @@
           "{env:HOME}/.config/dbhub/dbhub.toml"
         ],
         "disabled": false
+      },
+      "playwright": {
+        "type": "local",
+        "command": [
+          "{env:HOME}/.local/bin/mise",
+          "exec",
+          "node@22",
+          "--",
+          "npx",
+          "-y",
+          "@playwright/mcp@latest",
+          "--browser",
+          "chrome",
+          "--headless",
+          "--isolated"
+        ]
       }
     }
   },
