@@ -16,6 +16,11 @@ Check with the user that these seams match their expectations.
 
 3. Write the spec using the template below, then publish it according to the project's issue-tracking and label conventions. Read its agent instructions and referenced docs; if the destination or applicable labels are unclear, ask the user before publishing.
 
+   When publishing to Linear, apply these defaults unless the user specifies otherwise:
+   - Assign the issue to the authenticated user with `assignee: "me"`.
+   - Look up the destination team's current cycle with `list_cycles`, using the team's UUID and `type: "current"`. Set `cycle` to the returned cycle ID when creating the issue. If the team has no current cycle, create the issue without a cycle and mention that in the result.
+   - Verify the created issue's assignee and cycle match the requested values. Return its link and report the assignee and cycle.
+
 <spec-template>
 
 ## Problem Statement

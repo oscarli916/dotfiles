@@ -4,7 +4,7 @@ description: "Implement a piece of work based on a spec or set of tickets."
 disable-model-invocation: true
 ---
 
-Before start doing any implementation. Double check with user what branch they want to commit the changes. Show the current branch and ask the user to confirm.
+Before implementation, create a new branch from `main`, choose a descriptive name, and state which branch you will use. Use that branch for implementation and commits.
 
 Implement the work described by the user in the spec or tickets.
 
@@ -14,4 +14,4 @@ Run typechecking regularly, single test files regularly, and the full test suite
 
 Once done, use /code-review to review the work.
 
-Commit your work to the branch that you have double checked with user.
+Commit your work to the new branch.
