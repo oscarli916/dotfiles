@@ -2,7 +2,7 @@
 
 selected=$({
 	printf '%s\n' opencode
-	find "$HOME/personal/" "$HOME/lync" -mindepth 1 -maxdepth 1 -type d
+	find "$HOME/personal/" "$HOME/lync" "$HOME/work" -mindepth 1 -maxdepth 1 -type d
 } |
 	fzf --layout=reverse --delimiter=/ --nth=-1 \
 		--bind 'ctrl-p:up,ctrl-n:down,esc:abort,ctrl-c:abort' \
