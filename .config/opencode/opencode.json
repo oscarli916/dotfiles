@@ -22,6 +22,11 @@
         ],
         "disabled": false
       },
+      "linear": {
+        "type": "remote",
+        "url": "https://mcp.linear.app/mcp",
+        "disabled": false
+      },
       "playwright": {
         "type": "local",
         "command": [
@@ -56,6 +61,26 @@
       "resource": "opencode *",
       "effect": "deny"
     },
-    { "action": "shell", "resource": "opencode api get *", "effect": "allow" }
+    { "action": "shell", "resource": "opencode api get *", "effect": "allow" },
+    {
+      "action": "external_directory",
+      "resource": "~/personal/*",
+      "effect": "allow"
+    },
+    {
+      "action": "external_directory",
+      "resource": "~/lync/*",
+      "effect": "allow"
+    },
+    {
+      "action": "external_directory",
+      "resource": "~/work/*",
+      "effect": "allow"
+    },
+    {
+      "action": "external_directory",
+      "resource": "~/.config/*",
+      "effect": "allow"
+    }
   ]
 }
