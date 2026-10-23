@@ -1,0 +1,12 @@
+#!/usr/bin/env zsh
+
+selected=$(tmux list-sessions -F '#{session_name}' |
+	fzf --layout=reverse --no-multi \
+		--bind 'ctrl-p:up,ctrl-n:down,esc:abort,ctrl-c:abort' \
+		--prompt='Kill session> ')
+
+if [[ -z $selected ]]; then
+	exit 0
+fi
+
+tmux kill-session -t "=$selected"
