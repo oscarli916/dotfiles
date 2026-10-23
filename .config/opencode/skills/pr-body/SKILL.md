@@ -10,6 +10,10 @@ Use this template for writing the PR body:
 
 <diagram, diff-sketch, or tree>
 
+## Dependency
+
+<Mermaid dependency chain and required companion changes, when applicable>
+
 ## Evidence
 
 - **Before:** <screenshot/output/failing test run>
@@ -148,6 +152,28 @@ function expandSkill(command: string): string {
 Place each visual next to the short text it supports. Keep only the calls, files, props, states, and boundaries needed to answer the user's current question or the options to resolve the current discussion point.
 
 You may use one of these, you may use several, it is unlikely you will use all of them. Use your judgement and don't overwhelm the user.
+
+### Dependency
+
+Assess cross-service dependencies before writing the body. Inspect the diff, callers, contracts, configuration, and linked issues or PRs available to you. Trace upstream prerequisites and downstream consumers through each affected contract until no further coordinated changes are needed or the available evidence ends.
+
+Include this section when the PR depends on another service's change or affects a service that depends on it. Otherwise, omit it. If missing context prevents an assessment, include the section and state what still needs verification.
+
+Show the relevant dependency chain in a `mermaid` flowchart when relationships are confirmed. Arrows point from consumer to provider and carry the API, event, schema, shared package, or configuration that connects them. Identify the service changed by this PR. Draw only relationships supported by evidence.
+
+```mermaid
+flowchart LR
+    Web["Web app: update required"] -->|Transfer API| Transfer["Transfer service: this PR"]
+    Transfer -->|Token claims| Auth["Auth service: prerequisite update"]
+```
+
+Below the diagram, account for every service shown:
+
+- State the required companion change, or explain why the service remains compatible without an update.
+- Link the companion PR or issue when available. Mark required work without a known PR or issue as outstanding.
+- State merge or deployment order and any compatibility window. Distinguish changes that must ship together from independently deployable changes.
+
+When verification is incomplete, name the service or contract to check and the unanswered question. Keep confirmed requirements separate from unknowns so the reader can tell which services need updates alongside this PR.
 
 ### Evidence
 
