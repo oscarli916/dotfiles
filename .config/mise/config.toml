@@ -1,4 +1,5 @@
 [tools]
 aws-cli = { version = "latest", symlink_bins = "true" }
 direnv = "latest"
+pre-commit = "4.7.0"
 terraform = "1.14.8"
