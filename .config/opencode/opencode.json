@@ -83,6 +83,11 @@
       "action": "external_directory",
       "resource": "~/.config/*",
       "effect": "allow"
+    },
+    {
+      "action": "external_directory",
+      "resource": "/tmp/*",
+      "effect": "allow"
     }
   ]
 }
