@@ -28,6 +28,10 @@ Use this template for writing the PR body:
 **Blast Radius:** <one-word description>
 
 <optional: potential ramifications of merge>
+
+**Risk:** <low/medium/high>
+
+<optional: access the risk of merge>
 ```
 
 ## Sections
